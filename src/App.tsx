@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Heading from "./modules/header/header";
+import BannerComponent from "./modules/dashboard/bannerComponent";
+import CategoriesComponent from "./modules/dashboard/categoriesComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    name: "veda",
+    male: false,
+  };
+
+  componentDidMount(): void {}
+
+  render(): React.ReactNode {
+    return (
+      <div className="bg-grey-40">
+        <Heading state={this.state} />
+        <BannerComponent />
+        <CategoriesComponent />
+      </div>
+    );
+  }
 }
 
 export default App;
